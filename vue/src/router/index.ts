@@ -9,6 +9,7 @@ import TenthButtonPage from "@/components/pages/TenthButtonPage.vue"
 import ButtonSixthPage from "@/components/pages/ButtonSixthPage.vue"
 import FourthButtonPage from "@/components/pages/FourthButtons.vue";
 import TwelfthButtonPage from '../components/pages/TwelfthButtonPage.vue'
+import FourteenthButtonPage from '../components/pages/FourteenthButtonPage.vue'
 import { RouteNames } from './routes'
 import ThirdButtonPage from '../components/pages/ThirdButtonPage.vue'
 import FifthButtonPage from "@/components/pages/FifthButtonPage.vue";
@@ -60,6 +61,11 @@ const routes = [
     path: '/twelfth_button',
     name: RouteNames.TWELFTH_BUTTON,
     component: TwelfthButtonPage
+  },
+  {
+    path: '/fourteenth_button',
+    name: RouteNames.FOURTEENTH_BUTTON,
+    component: FourteenthButtonPage
   },
   {
     path: '/third_button',
