@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ModalContainer from "@/components/parts/ModalContainer";
+import ModalContainer from "@/components/parts/ModalContainer.vue";
 
 export default {
   components: {
