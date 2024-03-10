@@ -1,4 +1,5 @@
 import modals from './modals'
+import tenthButton from './tenthButton'
 
 export default {
   namespaced: true,
@@ -6,6 +7,7 @@ export default {
   getters: {},
   mutations: {},
   modules: {
-    modals
+    modals,
+    tenthButton
   }
 }
