@@ -1,5 +1,5 @@
 <template>
-  <button class="tenth-btn" :class="tenthBtnClass">
+  <button class="tenth-btn" :class="tenthBtnClass" @click="() => click()">
     <slot />
   </button>
 </template>
@@ -28,6 +28,11 @@ export default {
         this.rounded ? `tenth-btn--rounded` : ``,
         this.bordered ? `` : `tenth-btn--nobordered`
       ];
+    }
+  },
+  methods: {
+    click () {
+      this.$emit('click')
     }
   }
 }

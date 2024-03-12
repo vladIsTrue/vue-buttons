@@ -2,47 +2,47 @@
   <PageLayout>
     <div class="flex-container">
       <div>
-        <TenthButton @click.native="increment('b1')" color="red" rounded="true"> 
-          Strawberry (<span>{{ getButtonCounts.b1 }}</span>)
+        <TenthButton @click="() => increment(0)" color="red" rounded="true"> 
+          Strawberry (<span>{{ getButtonCounts[0] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b2')" color="green" rounded="true"> 
-          Apple (<span>{{ getButtonCounts.b2 }}</span>)
+        <TenthButton @click="() => increment(1)" color="green" rounded="true">
+          Apple (<span>{{ getButtonCounts[1] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b3')" color="blue" rounded="true"> 
-          Blueberry (<span>{{ getButtonCounts.b3 }}</span>)
-        </TenthButton>
-      </div>
-      <div>
-        <TenthButton @click.native="increment('b4')" color="red" bordered="true" rounded="true"> 
-          Strawberry (<span>{{ getButtonCounts.b4 }}</span>)
-        </TenthButton>
-        <TenthButton @click.native="increment('b5')" color="green" bordered="true" rounded="true"> 
-          Apple (<span>{{ getButtonCounts.b5 }}</span>)
-        </TenthButton>
-        <TenthButton @click.native="increment('b6')" color="blue" bordered="true" rounded="true"> 
-          Blueberry (<span>{{ getButtonCounts.b6 }}</span>)
+        <TenthButton @click="() => increment(2)" color="blue" rounded="true"> 
+          Blueberry (<span>{{ getButtonCounts[2] }}</span>)
         </TenthButton>
       </div>
       <div>
-        <TenthButton @click.native="increment('b7')" color="red"> 
-          Strawberry (<span>{{ getButtonCounts.b7 }}</span>)
+        <TenthButton @click="() => increment(3)" color="red" bordered="true" rounded="true"> 
+          Strawberry (<span>{{ getButtonCounts[3] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b8')" color="green"> 
-          Apple (<span>{{ getButtonCounts.b8 }}</span>)
+        <TenthButton @click="() => increment(4)" color="green" bordered="true" rounded="true"> 
+          Apple (<span>{{ getButtonCounts[4] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b9')" color="blue"> 
-          Blueberry (<span>{{ getButtonCounts.b9 }}</span>)
+        <TenthButton @click="() => increment(5)" color="blue" bordered="true" rounded="true"> 
+          Blueberry (<span>{{ getButtonCounts[5] }}</span>)
         </TenthButton>
       </div>
       <div>
-        <TenthButton @click.native="increment('b10')" color="red" bordered="true"> 
-          Strawberry (<span>{{ getButtonCounts.b10 }}</span>)
+        <TenthButton @click="() => increment(6)" color="red"> 
+          Strawberry (<span>{{ getButtonCounts[6] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b11')" color="green" bordered="true"> 
-          Apple (<span>{{ getButtonCounts.b11 }}</span>)
+        <TenthButton @click="() => increment(7)" color="green"> 
+          Apple (<span>{{ getButtonCounts[7] }}</span>)
         </TenthButton>
-        <TenthButton @click.native="increment('b12')" color="blue" bordered="true"> 
-          Blueberry (<span>{{ getButtonCounts.b12 }}</span>)
+        <TenthButton @click="() => increment(8)" color="blue"> 
+          Blueberry (<span>{{ getButtonCounts[8] }}</span>)
+        </TenthButton>
+      </div>
+      <div>
+        <TenthButton @click="() => increment(9)" color="red" bordered="true"> 
+          Strawberry (<span>{{ getButtonCounts[9] }}</span>)
+        </TenthButton>
+        <TenthButton @click="() => increment(10)" color="green" bordered="true"> 
+          Apple (<span>{{ getButtonCounts[10] }}</span>)
+        </TenthButton>
+        <TenthButton @click="() => increment(11)" color="blue" bordered="true"> 
+          Blueberry (<span>{{ getButtonCounts[11] }}</span>)
         </TenthButton>
       </div>
     </div>
@@ -52,7 +52,7 @@
 <script>
 import PageLayout from '../parts/PageLayout';
 import TenthButton from "@/components/ui/buttons/TenthButton.vue";
-import {mapActions, mapGetters} from "vuex";
+import {mapGetters, mapActions} from "vuex";
 
 export default {
   name: 'TenthButtonPage',
