@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <PulseHeader />
 
     <PulseFooter />
@@ -17,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.page{
+  background-color: white;
+}
+</style>

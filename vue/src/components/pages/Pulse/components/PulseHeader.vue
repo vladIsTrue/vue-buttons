@@ -7,24 +7,32 @@
     </div>
 
     <div class="menu">
-      <router-link to="/articles" class="menu-link">Articles</router-link>
-      <router-link to="/product" class="menu-link">Product</router-link>
-      <router-link to="/solution" class="menu-link">Solution</router-link>
-      <router-link to="/resources" class="menu-link">Resources</router-link>
-      <router-link to="/enterprise" class="menu-link">Enterprise</router-link>
+
+      <MenuButton> Article </MenuButton>
+      <MenuButton> Product </MenuButton>
+      <MenuButton> Solutions </MenuButton>
+      <MenuButton> Resources </MenuButton>
+      <MenuButton> Enterprise </MenuButton>
+
+      <AddButton/>
+      <SearchButton/>
+
     </div>
-
-
-    <div class="find-add">
-
-    </div>
-
   </header>
 </template>
 
 <script>
+import MenuButton from "./ui/buttons/MenuButton.vue";
+import SearchButton from "./ui/buttons/SearchButton.vue";
+import AddButton from "./ui/buttons/AddButton.vue";
+
 export default {
-  name: 'PulseHeader'
+  name: 'PulseHeader',
+  components: {
+    MenuButton,
+    SearchButton,
+    AddButton
+  }
 }
 </script>
 
@@ -41,11 +49,6 @@ export default {
   display: inline-flex;
 }
 
-.menu-link {
-  margin-right: 30px;
-  font-size: 15px;
-}
-
 .logo-container {
   display: inline-flex;
   align-items: center;
@@ -59,5 +62,9 @@ export default {
 .logo-text {
   font-size: 25px;
   margin: 5px;
+}
+
+.find-add {
+  display: inline-flex;
 }
 </style>

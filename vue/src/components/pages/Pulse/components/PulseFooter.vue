@@ -1,10 +1,15 @@
 <template>
 <footer class="footer">
   <div class="newsletter-wrapper">
-    <h3>JOIN OUR NEWSLETTER</h3>
+    <h3>Join Our Newsletter</h3>
     <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email">
-      <button type="submit">Subscribe</button>
+
+      <EmailSend/>
+      
+      
+      <!-- <input type="email" placeholder="Enter your email address here">
+      <button type="submit">Subscribe</button> -->
+    
     </form>
   </div>
   <hr>
@@ -17,8 +22,13 @@
 </template>
   
 <script>
+import EmailSend from "./ui/buttons/EmailSend.vue"
+
 export default {
-  name: 'PulseFooter'
+  name: 'PulseFooter',
+  components: {
+    EmailSend 
+  }
 }
 </script>
   
@@ -31,6 +41,10 @@ export default {
   border-radius: 10px;
 }
 
+.placeholder {
+  color: black;
+}
+
 .newsletter-wrapper {
   display: flex;
   justify-content: space-around;
@@ -38,7 +52,7 @@ export default {
 }
 
 .newsletter-wrapper h3 {
-  font-size: 24px;
+  font-size: 36px;
   color: white;
 }
 
