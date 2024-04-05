@@ -9,7 +9,7 @@
       
       <!-- <article-section :title="'Entertainment Articles'" :articles="entertainmentArticles"></article-section> -->
 
-      <BigNews/>
+      <small-news :article="articleData"></small-news>
 
     </main>
 
@@ -32,7 +32,7 @@ import PulseFooter from './components/PulseFooter'
 
 //import TextNews from './components/TextNews'
 
-import BigNews from './components/BigNews'
+import SmallNews from './components/SmallNews'
   
 export default {
   components: {
@@ -40,7 +40,19 @@ export default {
     PulseFooter,
     //TextNews
 
-    BigNews
+    SmallNews
+  },
+  data() {
+    return {
+      articleData: {
+        imageUrl: '"~vue-buttons/vue/src/components/pages/Pulse/components/resource/logo.jpg"',
+        title: 'Название вашей статьи',
+        subtitle: 'Краткое описание статьи',
+        category: 'Новости',
+        author: 'Иван Иванов',
+        publishDate: '2024-04-05'
+      }
+    }
   }
   // data() {
   //   return {

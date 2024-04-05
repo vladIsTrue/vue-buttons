@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'ArticleCard',
+  name: 'SmallNews',
   props: {
     article: {
       type: Object,
@@ -53,16 +53,17 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ffffff; /* Change as needed */
+  background-color: #ffffff;
 }
 
 .article-category {
-  background-color: #007bff; /* Change as needed */
-  color: white;
+  border: 1px solid black;
   padding: 2px 8px;
-  border-radius: 5px;
+  border-radius: 15px;
+  color: black;
+  background: transparent;
+  width: fit-content;
   font-size: 0.75rem;
-  align-self: start;
 }
 
 .article-title {

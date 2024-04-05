@@ -36,11 +36,12 @@ export default {
 
 <style scoped>
 .article-card {
-  max-width: 300px; /* Adjust width as necessary */
+  max-width: 500px; /* Adjust width as necessary */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
+  width: fit-content;
 }
 
 .article-card:hover {
@@ -60,15 +61,27 @@ export default {
 }
 
 .article-category {
-  display: block;
-  background-color: #3498db; /* Adjust category label background color as necessary */
+  /* display: block;
+  background-color: #3498db; 
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
+  width: fit-content; */
+
+
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 400;
+  color: white;
+  background: transparent;
   width: fit-content;
+  font-size: 10px;
 }
 
 .article-title {
+  color: white;
+  font-size: 32px;
   margin-top: 0.5rem;
 }
 
