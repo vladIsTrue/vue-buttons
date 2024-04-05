@@ -33,7 +33,7 @@ export default {
 input[type="email"] {
   border: none;
   padding: 10px 20px;
-  width: 300px;
+  width: 400;
   color: white;
   background: transparent;
 }

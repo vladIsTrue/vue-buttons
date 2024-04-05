@@ -1,70 +1,70 @@
 <template>
-  <header class="header">
-
-    <div class="logo-container">
-      <img class="logo-img" src="./resource/logo.jpg" alt="Pulse Logo">
-      <div class="logo-text">Pulse</div>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">Pulse</a>
     </div>
-
-    <div class="menu">
-
-      <MenuButton> Article </MenuButton>
-      <MenuButton> Product </MenuButton>
-      <MenuButton> Solutions </MenuButton>
-      <MenuButton> Resources </MenuButton>
-      <MenuButton> Enterprise </MenuButton>
-
-      <AddButton/>
-      <SearchButton/>
-
+    <div class="navbar-links">
+      <a href="/articles">Articles</a>
+      <a href="/product">Product</a>
+      <a href="/solutions">Solutions</a>
+      <a href="/resources">Resources</a>
+      <a href="/enterprise">Enterprise</a>
     </div>
-  </header>
+    <div class="navbar-actions">
+      <button class="login-btn">Login</button>
+      <button class="get-started-btn">Get Started - It's Free</button>
+    </div>
+  </nav>
 </template>
 
 <script>
-import MenuButton from "./ui/buttons/MenuButton.vue";
-import SearchButton from "./ui/buttons/SearchButton.vue";
-import AddButton from "./ui/buttons/AddButton.vue";
-
 export default {
-  name: 'PulseHeader',
-  components: {
-    MenuButton,
-    SearchButton,
-    AddButton
-  }
+  name: 'PulseHeader'
 }
 </script>
 
-<style scoped lang="less">
-.header {
+<style>
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  padding: 20px 60px;
+  padding: 1rem 2rem;
+  background-color: #fff;
 }
 
-.menu {
-  display: inline-flex;
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
 }
 
-.logo-container {
-  display: inline-flex;
+.navbar-links a {
+  margin-right: 1rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar-actions {
+  display: flex;
   align-items: center;
 }
 
-.logo-img {
-  width: 25px;
-  width: 25px;
+.login-btn {
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  color: #007bff;
+  cursor: pointer;
 }
 
-.logo-text {
-  font-size: 25px;
-  margin: 5px;
+.get-started-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
 }
 
-.find-add {
-  display: inline-flex;
-}
+/* Add additional styling according to your needs */
 </style>
