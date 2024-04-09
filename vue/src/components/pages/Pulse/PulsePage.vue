@@ -1,46 +1,32 @@
 <template>
-  <div class="page">
-    <PulseHeader />
+  <PageLayout>
+    <div class="page">
+      <PulseHeader />
 
-    <main>
-      
-      <!-- <trending-articles :articles="trendingArticles"></trending-articles> -->
-      
-      
-      <!-- <article-section :title="'Entertainment Articles'" :articles="entertainmentArticles"></article-section> -->
+      <TodaysTraindingNews />
 
-      <small-news :article="articleData"></small-news>
 
-    </main>
 
-    <!-- <div>
-      <TextNews> </TextNews>
-      <TextNews> </TextNews>
-    </div> -->
-    
-
-    <PulseFooter />
-    <!-- Footer Component
-    <footer-section></footer-section> -->
-
-  </div>
+      <!-- <PulseFooter /> -->
+    </div>
+  </PageLayout>
 </template>
   
 <script>
+import PageLayout from "../../parts/PageLayout";
 import PulseHeader from './components/PulseHeader'
-import PulseFooter from './components/PulseFooter'
+import TodaysTraindingNews from './components/TodaysTraindingNews'
+//import PulseFooter from './components/PulseFooter'
 
 //import TextNews from './components/TextNews'
 
-import SmallNews from './components/SmallNews'
+//import SmallNews from './components/SmallNews'
   
 export default {
   components: {
+    PageLayout,
     PulseHeader,
-    PulseFooter,
-    //TextNews
-
-    SmallNews
+    TodaysTraindingNews
   },
   data() {
     return {
@@ -64,7 +50,7 @@ export default {
 </script>
 
 <style>
-.page{
+.page {
   background-color: white;
 }
 </style>
