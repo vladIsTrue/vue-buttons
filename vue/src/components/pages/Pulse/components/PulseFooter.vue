@@ -30,60 +30,57 @@ export default {
 
 <style scoped lang="less">
 .footer {
-  padding: 20px 40px;
   text-align: center;
   background: #1c294b;
-  margin: 0 auto;
-  max-width: 80%;
+  margin: 30px;
   border-radius: 10px;
 }
 
 .newsletter-wrapper {
   display: flex;
-  flex-direction: row; // Elements in a row for larger screens
-  align-items: center; // Center items vertically
-  justify-content: space-between; // Distribute space between elements
-  padding: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
 }
 
 .newsletter-wrapper h3 {
   font-size: 32px;
   color: white;
-  flex: 1; // Allow the title to take the available space
-  //margin-right: 1rem; // Add space before the form
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 .newsletter-form {
-  flex: 2; // Allow the form to grow
-  display: flex;
-  justify-content: flex-end; // Align form elements to the right
+  padding-right: 30px;
+  padding-bottom: 20px;
+  width: 50%;
 }
 
 hr {
   border: none;
   border-top: 1px solid #fff;
-  margin: 20px auto;
-  width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer-bottom {
-  display: flex;
-  justify-content: center; // Center for all screen sizes
-  padding: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .footer-bottom-content {
   display: flex;
-  flex-direction: row; // Elements in a row
-  align-items: center;
-  justify-content: space-between; // Distribute space
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
 }
 
 .footer-bottom-content p {
-  margin: 0 10px;
   color: white;
-  flex: 1; // Allow each paragraph to take equal space
+  font-size: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footer-bottom-content a {
@@ -93,29 +90,5 @@ hr {
 
 .footer-bottom-content a:hover {
   text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .newsletter-wrapper {
-    flex-direction: column; // Stack elements vertically on smaller screens
-    align-items: stretch; // Stretch elements to fill the width
-  }
-
-  .newsletter-wrapper h3 {
-    margin-right: 0; // Remove the margin for smaller screens
-  }
-
-  .newsletter-form {
-    justify-content: center; // Center form elements on smaller screens
-  }
-
-  .footer-bottom-content {
-    flex-direction: column; // Stack footer content vertically on smaller screens
-    align-items: stretch;
-  }
-
-  .footer-bottom-content p {
-    margin-bottom: 0.5rem; // Add some space between stacked paragraphs
-  }
 }
 </style>

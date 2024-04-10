@@ -5,9 +5,9 @@
 
       <TodaysTraindingNews />
 
+      <EntertainmentArticles/>
 
-
-      <!-- <PulseFooter /> -->
+      <PulseFooter />
     </div>
   </PageLayout>
 </template>
@@ -16,17 +16,16 @@
 import PageLayout from "../../parts/PageLayout";
 import PulseHeader from './components/PulseHeader'
 import TodaysTraindingNews from './components/TodaysTraindingNews'
-//import PulseFooter from './components/PulseFooter'
-
-//import TextNews from './components/TextNews'
-
-//import SmallNews from './components/SmallNews'
+import EntertainmentArticles from './components/EntertainmentArticles'
+import PulseFooter from './components/PulseFooter'
   
 export default {
   components: {
     PageLayout,
     PulseHeader,
-    TodaysTraindingNews
+    TodaysTraindingNews,
+    EntertainmentArticles,
+    PulseFooter
   },
   data() {
     return {
@@ -40,12 +39,6 @@ export default {
       }
     }
   }
-  // data() {
-  //   return {
-  //     trendingArticles: [],
-  //     entertainmentArticles: []
-  //   }
-  // }
 }
 </script>
 
