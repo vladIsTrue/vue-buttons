@@ -108,6 +108,7 @@ export default {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 20px;
+    font-size: 12px;
     color: white;
     background-color: #007bff;
     cursor: pointer;

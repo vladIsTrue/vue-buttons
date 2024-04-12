@@ -1,90 +1,105 @@
 <template>
-  <div class="article-card">
-    <img :src="article.imageUrl" :alt="article.title" class="article-image">
-    <div class="article-info">
-      <span class="article-category">{{ article.category }}</span>
-      <h3 class="article-title">{{ article.title }}</h3>
-      <div class="article-footer">
-        <span class="article-author">{{ article.author }}</span>
-        <span class="article-date">{{ formattedDate }}</span>
+  <div class="small-card">
+    <img 
+      :src="image"
+      alt="card image"
+      class="small-card__image"
+    >
+    <div class="small-card__content">
+      <span class="small-card__content__category">{{ category }}</span>
+      <h2 class="small-card__content__title">{{ title }}</h2>
+      <div class="small-card__metadata">
+        <span class="small-card__metadata__author">{{ author }}</span>
+        <span class="small-card__metadata__date">{{ date }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { RouteNames } from "../../../../router/routes";
 export default {
-  name: 'SmallNews',
+  name: "SmallNews",
   props: {
-    article: {
-      type: Object,
-      required: true
+    id: {
+      type: Number,
+      require: 'true'
+    },
+    image: {
+      type: String,
+      default: 'image'
+    },
+    category: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    author: {
+      type: String,
+      default: ''
+    },
+    date: {
+      type: String,
+      default: ''
     }
   },
   computed: {
-    formattedDate() {
-      // Format the date here as per your requirements
-      return new Date(this.article.publishDate).toLocaleDateString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-      });
+    routeNames () {
+      return RouteNames;
     }
   }
-}
+};
 </script>
 
-<style scoped>
-.article-card {
+<style scoped lang="less">
+.small-card {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  height: 100px;
+  margin: 10px;
 
-.article-image {
-  width: 120px; /* Or any other fixed width */
-  height: 100%;
-  object-fit: cover;
-}
+  &__image {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.article-info {
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #ffffff;
-}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.article-category {
-  border: 1px solid black;
-  padding: 2px 8px;
-  border-radius: 15px;
-  color: black;
-  background: transparent;
-  width: fit-content;
-  font-size: 0.75rem;
-}
+    &__category {
+      border: 1px solid black;
+      border-radius: 25px;
+      width: fit-content;
+      font-size: 10px;
+      padding: 2px 5px;
+    }
 
-.article-title {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
+    &__title {
+      color: black;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  }
 
-.article-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-}
+  &__metadata {
+    font-size: 10px;
+    display: flex;
 
-.article-author {
-  color: #555;
-}
+    &__author {
+      margin: 2px;
+    }
 
-.article-date {
-  color: #999;
+    &__date {
+      margin: 2px;
+    }
+  }
 }
-
-/* You may need to adjust the styling to match the exact design */
 </style>

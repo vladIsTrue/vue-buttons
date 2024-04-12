@@ -1,12 +1,10 @@
 <template>
   <PageLayout>
-    <div class="page">
+    <div class="home-page">
       <PulseHeader />
 
       <TodaysTraindingNews />
-
       <EntertainmentArticles/>
-
       <PulseFooter />
     </div>
   </PageLayout>
@@ -18,6 +16,8 @@ import PulseHeader from './components/PulseHeader'
 import TodaysTraindingNews from './components/TodaysTraindingNews'
 import EntertainmentArticles from './components/EntertainmentArticles'
 import PulseFooter from './components/PulseFooter'
+
+//import { mapGetters } from "vuex";
   
 export default {
   components: {
@@ -27,23 +27,29 @@ export default {
     EntertainmentArticles,
     PulseFooter
   },
-  data() {
-    return {
-      articleData: {
-        imageUrl: '"~vue-buttons/vue/src/components/pages/Pulse/components/resource/logo.jpg"',
-        title: 'Название вашей статьи',
-        subtitle: 'Краткое описание статьи',
-        category: 'Новости',
-        author: 'Иван Иванов',
-        publishDate: '2024-04-05'
-      }
-    }
+  // data() {
+  //   return {
+  //     articleData: {
+  //       imageUrl: '"~vue-buttons/vue/src/components/pages/Pulse/components/resource/logo.jpg"',
+  //       title: 'Название вашей статьи',
+  //       subtitle: 'Краткое описание статьи',
+  //       category: 'Новости',
+  //       author: 'Иван Иванов',
+  //       publishDate: '2024-04-05'
+  //     }
+  //   }
+  // },
+  computed: {
+
+  },
+  methods: {
+    
   }
 }
 </script>
 
-<style>
-.page {
+<style lang="less">
+.home-page {
   background-color: white;
 }
 </style>

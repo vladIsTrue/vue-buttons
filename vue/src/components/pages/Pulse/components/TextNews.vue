@@ -1,69 +1,96 @@
 <template>
-  <div class="news-card">
-    <div class="content-container">
-      <h2 class="news-title">{{ title }}</h2>
-      <p class="news-content">{{ content }}</p>
-      <a href="#" class="news-link">Read Articles <span class="arrow">→</span></a>
+  <div class="text-card">
+    <div class="text-card__content">
+      <!-- <h2 class="text-card__content__title">{{ currentNews['title'] }}</h2>
+      <p class="text-card__content__text">{{ currentNews['subtitle'] }}</p> -->
+
+      <!-- <RouterLink :to="{ name: routeNames.ENTERTAIMENT_ARTICLES, params: { id:currentNews['id'] } }"> -->
+      <RouterLink
+        to="/enterprise"
+        class="header__nav-btn"
+        :class="{ 'header__nav-btn--active': $route.path === '/enterprise' }"
+      >
+          <ReadMore />
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script>
+import { RouteNames } from "@/router/routes";
+import ReadMore from "./ui/buttons/ReadMore.vue";
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
-  data() {
-    return {
-      title: 'Taylor Swift shares track list for her latest album during concert.',
-      content: 'He also invited two other musicians to collaborate on his album, namely Post Malone and Florence and The Machine at the concert.'
+  name: "TextNews",
+  props: {
+    currentNews: {
+      type: Object,
+      required: true
     }
+  },
+  computed: {
+    ...mapGetters('buttonTatarskayaFedotova', [
+      'getButtonValues'
+    ]),
+    ...mapGetters('newsStoreTatarskayaFedotova', [
+      'getFirstTypeNews'
+    ]),
+    routeNames () {
+      return RouteNames;
+    }
+  },
+  methods: {
+    ...mapActions('buttonTatarskayaFedotova', [
+      'incrementButtonValue'
+    ]),
+    changeSlide (index) {
+      this.currentSlide = index;
+      this.$emit('changeSlideIndex', index);
+    },
+    incrementCount (index) {
+      this.incrementButtonValue(index);
+    }
+  },
+  components: {
+    ReadMore
   }
-}
+};
 </script>
 
-<style scoped>
-.news-card {
-  border: 15px solid #ec407a; /* pink border color */
-  border-radius: 20px;
+<style scoped lang="less">
+.text-card {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 14px solid  #a97ddf;
+  border-radius: 10px;
+  
   padding: 1em;
+  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  transition: transform 0.3s ease;
-}
+  
+  max-width: 220px;
+  width: 220px;
+  max-height: 140px;
+  height: 140px;
+  
+  margin: 8px;
+  
+  &__content {
+    background-color: white;
 
-.news-card:hover {
-  transform: translateY(-2px);
-}
+    &__title {
+      font-size: 22px;
+      color: #333;
+    }
 
-.content-container {
-  background-color: white; /* white background for the content */
-}
-
-.news-title {
-  font-size: 1.25rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.news-content {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.news-link {
-  font-size: 0.875rem;
-  color: #007bff;
-  text-decoration: none;
-  position: relative; /* Position relative for the arrow */
-}
-
-.news-link .arrow {
-  display: inline-block;
-  transform: translateY(-2px) rotate(-45deg); /* Rotate arrow */
-  transition: transform 0.2s ease;
-}
-
-.news-link:hover .arrow {
-  transform: translateY(-4px) rotate(-45deg); /* Translate and rotate arrow on hover */
+    &__text {
+      font-size: 12px;
+      color: #666;
+    }
+  }
 }
 </style>

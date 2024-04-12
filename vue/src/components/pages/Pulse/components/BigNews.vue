@@ -1,107 +1,118 @@
 <template>
-  <div class="article-card">
-    <img :src="article.imageUrl" :alt="article.title" class="article-image">
-    <div class="article-content">
-      <span class="article-category">{{ article.category }}</span>
-      <h3 class="article-title">{{ article.title }}</h3>
-      <p class="article-subtitle">{{ article.subtitle }}</p>
-      <div class="article-metadata">
-        <span class="article-author">{{ article.author }}</span>
-        <span class="article-date">{{ formattedDate }}</span>
+  <div class="big-card">
+    <img 
+      :src="image"
+      alt="card image"
+      class="big-card__image"
+    >
+    <div class="big-card__content">
+      <span class="big-card__content__category">{{ category }}</span>
+      <h2 class="big-card__content__title">{{ title }}</h2>
+      <p class="big-card__content__subtitle">{{ subtitle }}</p>
+      <div class="big-card__metadata">
+        <span class="big-card__metadata__author">{{ author }}</span>
+        <span class="big-card__metadata__date">{{ date }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { RouteNames } from "../../../../router/routes";
 export default {
-  name: 'BigNews',
+  name: "BigNews",
   props: {
-    article: {
-      type: Object,
-      required: true
+    id: {
+      type: Number,
+      require: 'true'
+    },
+    image: {
+      type: String,
+      default: 'image'
+    },
+    category: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    subtitle: {
+      type: String,
+      default: ''
+    },
+    author: {
+      type: String,
+      default: ''
+    },
+    date: {
+      type: String,
+      default: ''
     }
   },
   computed: {
-    formattedDate() {
-      return new Date(this.article.publishDate).toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
-      });
+    routeNames () {
+      return RouteNames;
     }
   }
-}
+};
 </script>
 
-<style scoped>
-.article-card {
-  max-width: 500px; /* Adjust width as necessary */
+<style scoped lang="less">
+.big-card {
+  max-width: 500px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: fit-content;
+  width: 500px;
+  height: 320px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__content {
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+
+    &__category {
+      border: 1px solid white;
+      border-radius: 25px;
+      width: fit-content;
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+
+    &__title {
+      color: white;
+      font-size: 28px;
+      margin-top: 4px;
+    }
+
+    &__subtitle {
+      font-size: 10px;
+    }
+  }
+
+  &__metadata {
+    font-size: 10px;
+    display: flex;
+
+    &__author {
+      margin: 2px;
+    }
+
+    &__date {
+      margin: 2px;
+      float: right;
+    }
+  }
 }
-
-.article-card:hover {
-  transform: translateY(-5px);
-}
-
-.article-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.article-content {
-  padding: 1rem;
-  background-color: #2c3e50; /* Adjust background color as necessary */
-  color: white;
-}
-
-.article-category {
-  /* display: block;
-  background-color: #3498db; 
-  color: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  width: fit-content; */
-
-
-  border: 1px solid white;
-  border-radius: 25px;
-  padding: 10px 20px;
-  width: 400;
-  color: white;
-  background: transparent;
-  width: fit-content;
-  font-size: 10px;
-}
-
-.article-title {
-  color: white;
-  font-size: 32px;
-  margin-top: 0.5rem;
-}
-
-.article-subtitle {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.article-metadata {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-
-.article-author {
-  font-weight: bold;
-}
-
-.article-date {
-  float: right;
-}
-
-/* Additional styling */
 </style>
