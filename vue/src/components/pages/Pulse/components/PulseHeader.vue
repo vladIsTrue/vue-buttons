@@ -10,9 +10,9 @@
     </div>
     <nav class="header__nav-links">
       <RouterLink
-        to="/articles"
+        to="/pulse"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/articles' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse' }"
       >
         Articles
       </RouterLink>
@@ -47,15 +47,10 @@
     </nav>
 
     <div class="header__nav-buttons">
-      <!-- <RouterLink 
-        :to="{ name: routeNames.ADD_TODAYS_NEWS_PULSE }"
+      <RouterLink 
+        :to="{ name: routeNames.ADD_NEWS_PULSE }"
         class="header__nav-btn"
-        :class="{ 'header__nav-link--active': $route.name === routeNames.ADD_TODAYS_NEWS_PULSE }"
-      > -->
-      <RouterLink
-        to="/enterprise"
-        class="header__nav-btn"
-        :class="{ 'header__nav-btn--active': $route.path === '/enterprise' }"
+        :class="{ 'header__nav-link--active': $route.name === routeNames.ADD_NEWS_PULSE }"
       >
         Add news
       </RouterLink>
@@ -64,8 +59,15 @@
 </template>
 
 <script>
+import { RouteNames } from "@/router/routes";
+
 export default {
-  name: 'PulseHeader'
+  name: 'PulseHeader',
+  computed: {
+    routeNames() {
+      return RouteNames
+    }
+  }
 }
 </script>
 
@@ -74,7 +76,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding-bottom: 20px;
+  
   background-color: white;
   height: 32px;
   font-family: "Calibri", sans-serif;

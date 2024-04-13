@@ -1,53 +1,53 @@
 <template>
-  <div class="custom-email-input">
-    <input type="email" placeholder="Enter your email address here" v-model="email">
-    <button @click="sendEmail"></button>
+  <div class="search-btn">
+    <input type="text" placeholder="Search" v-model="inputData">
+    <button @click="() => sendData()"></button>
   </div>
 </template>
 
 <script>
-export default {  
+export default {
+  name: 'SearchBtn',
   data() {
     return {
-      email: ''
+      inputData: ''
     };
   },
   methods: {
-    sendEmail() {
-      console.log('Sending email to:', this.email);
+    sendData() {
+      this.$emit('search', this.inputData);
     }
   }
 };
 </script>
 
 <style lang="less">
-.custom-email-input {
+.search-btn {
   position: relative;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 50px;
   display: flex; 
   align-items: center; 
   justify-content: space-between;
   
-  input[type="email"] {
+  input[type="text"] {
     border: none;
     padding: 10px 20px;
     width: 400;
-    color: white;
+    color: black;
     background: transparent;
     &::placeholder {
-      color: white;
+      color: black;
     }
     &:focus {
       outline: none;
     }
   }
   button {
-    background-color: white;
     border: none;
     border-radius: 50%;
 
-    background-image: url('https://w7.pngwing.com/pngs/560/91/png-transparent-arrow-arrowright-next-right-arrows-developer-set-icon.png');
+    background-image: url('https://cdn-icons-png.flaticon.com/512/44/44623.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;

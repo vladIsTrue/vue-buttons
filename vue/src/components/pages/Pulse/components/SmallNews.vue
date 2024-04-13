@@ -59,13 +59,13 @@ export default {
   display: flex;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: 100px;
   margin: 10px;
 
   &__image {
-    width: 150px;
-    height: 100%;
+    border-radius: 10px;
+    max-width: 150px;
+    min-width: 150px;
     object-fit: cover;
   }
 
@@ -73,6 +73,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 12px;
+
+    line-height: 1;
 
     &__category {
       border: 1px solid black;
@@ -80,12 +83,14 @@ export default {
       width: fit-content;
       font-size: 10px;
       padding: 2px 5px;
+      font-family: "Calibri", sans-serif;
     }
 
     &__title {
       color: black;
       font-size: 14px;
       margin-top: 4px;
+      font-family: "Calibri", sans-serif;
     }
   }
 
@@ -95,10 +100,12 @@ export default {
 
     &__author {
       margin: 2px;
+      font-family: "Calibri", sans-serif;
     }
 
     &__date {
       margin: 2px;
+      font-family: "Calibri", sans-serif;
     }
   }
 }

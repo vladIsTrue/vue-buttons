@@ -1,7 +1,7 @@
 <template>
   <PageLayout>
-    <PulseHeader/>
     <div class="block">
+      <PulseHeader/>
       <h2 class="block__text">DATE</h2>
       <input 
         v-model="date"
@@ -22,18 +22,19 @@
       />
       <h2 class="block__text">TEXT</h2>
       <input 
-        v-model="text"
+        v-model="subtitle"
         class="block__input" 
         type="text" 
       />
-      <button class="block__button" @click="() => createNews()">CREATE</button>
+      <button class="block__button" @click="() => createNews()">ADD</button>
+
+      <PulseFooter/>
     </div>
-    <PulseFooter/>
   </PageLayout>
 </template>
 
 <script>
-import PageLayout from '../../parts/PageLayout';
+import PageLayout from '../../../parts/PageLayout';
 import { mapGetters, mapActions } from 'vuex';
 import PulseHeader from "@/components/pages/Pulse/components/PulseHeader.vue";
 import PulseFooter from "@/components/pages/Pulse/components/PulseFooter.vue";
@@ -49,16 +50,16 @@ export default {
       image: '',
       date:'',
       title: '',
-      text: ''
+      subtitle: ''
     };
   },
   computed: {
-    ...mapGetters("newsStorePulse", [
+    ...mapGetters("pulse", [
       "getLastIndex"
     ])
   },
   methods: {
-    ...mapActions('newsStorePulse', [
+    ...mapActions('pulse', [
       'addNews'
     ]),
     createNews () {
@@ -67,13 +68,13 @@ export default {
         date: this.date,
         title: this.title,
         image: this.image,
-        text: this.text
+        subtitle: this.subtitle
       };
       this.addNews(newNews);
       this.date = '';
       this.title = '';
       this.image = '';
-      this.text = '';
+      this.subtitle = '';
     }
   }
 }
@@ -84,10 +85,11 @@ export default {
   background-color: white;
   text-align: center;
   padding: 20px;
+
   &__text {
     display: block;
     margin-bottom: 10px;
-    color: grey;
+    color: black;
     font-family: 'Calibri';
     font-size: 14px;
     text-align: center;
@@ -97,20 +99,21 @@ export default {
     height: 36px;
     margin: 0;
     background-color: transparent;
-    border: 1px solid grey;
-    color: grey;
+    border: 1px solid black;
+    color: black;
     font-family: 'Calibri';
     font-size: 14px;
     text-align: center;
   }
   &__button {
     background-color: transparent;
-    border: 1px solid grey;
+    border: 1px solid black;
+    border-radius: 15px;
     padding: 5px 10px;
     margin: 10px;
     font-size: 14px;
     cursor: pointer;
-    color: #808080;
+    color: black;
   }
 }
 </style>

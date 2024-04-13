@@ -32,7 +32,7 @@ export default {
 .footer {
   text-align: center;
   background: #1c294b;
-  margin: 30px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 
@@ -59,7 +59,7 @@ export default {
 
 hr {
   border: none;
-  border-top: 1px solid #fff;
+  border-top: 1px solid white;
   margin-left: 20px;
   margin-right: 20px;
 }

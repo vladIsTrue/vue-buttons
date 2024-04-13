@@ -73,7 +73,7 @@ export default {
 
   &__image {
     width: 100%;
-    height: auto;
+    height: 50%;
     display: block;
   }
 
@@ -88,16 +88,21 @@ export default {
       width: fit-content;
       font-size: 10px;
       padding: 5px 10px;
+      font-family: "Calibri", sans-serif;
     }
 
     &__title {
+      line-height: 1;
       color: white;
-      font-size: 28px;
+      font-size: 20px;
       margin-top: 4px;
+      font-family: "Calibri", sans-serif;
     }
 
     &__subtitle {
+      line-height: 1;
       font-size: 10px;
+      font-family: "Calibri", sans-serif;
     }
   }
 
@@ -107,11 +112,13 @@ export default {
 
     &__author {
       margin: 2px;
+      font-family: "Calibri", sans-serif;
     }
 
     &__date {
       margin: 2px;
       float: right;
+      font-family: "Calibri", sans-serif;
     }
   }
 }

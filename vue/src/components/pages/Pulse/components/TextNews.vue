@@ -1,18 +1,15 @@
 <template>
   <div class="text-card">
     <div class="text-card__content">
-      <!-- <h2 class="text-card__content__title">{{ currentNews['title'] }}</h2>
-      <p class="text-card__content__text">{{ currentNews['subtitle'] }}</p> -->
+      <h2 class="text-card__content__title">{{ title }}</h2>
+      <p class="text-card__content__text">{{ subtitle }}</p>
 
-      <!-- <RouterLink :to="{ name: routeNames.ENTERTAIMENT_ARTICLES, params: { id:currentNews['id'] } }"> -->
-      <RouterLink
-        to="/enterprise"
-        class="header__nav-btn"
-        :class="{ 'header__nav-btn--active': $route.path === '/enterprise' }"
-      >
-          <ReadMore />
-      </RouterLink>
     </div>
+
+    <RouterLink :to="{ name: routeNames.NEWS_PULSE, params: { id:id } }">
+      <ReadMore class="text-card__more"/>
+    </RouterLink>
+
   </div>
 </template>
 
@@ -24,13 +21,21 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
   name: "TextNews",
   props: {
-    currentNews: {
-      type: Object,
-      required: true
+    id: {
+      type: Number,
+      require: 'true'
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    subtitle: {
+      type: String,
+      default: ''
     }
   },
   computed: {
-    ...mapGetters('buttonTatarskayaFedotova', [
+    ...mapGetters('ReadMore', [
       'getButtonValues'
     ]),
     ...mapGetters('newsStoreTatarskayaFedotova', [
@@ -60,7 +65,6 @@ export default {
 
 <style scoped lang="less">
 .text-card {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,18 +73,23 @@ export default {
   border-radius: 10px;
   
   padding: 1em;
+
+  background-color: white;
   
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
-  max-width: 220px;
-  width: 220px;
-  max-height: 140px;
-  height: 140px;
+  min-width: 240px;
+  max-width: 240px;
+  max-height: 144px;
+  min-height: 144px;
   
   margin: 8px;
-  
+
   &__content {
-    background-color: white;
+    max-height: 130px;
+    min-height: 130px;  
+
+    line-height: 1;
 
     &__title {
       font-size: 22px;

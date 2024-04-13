@@ -10,12 +10,44 @@
     <hr>
 
     <div class="news">
-        <big-news :article="articleData"></big-news>
+        <big-news
+          :id="topTodaysArticles[0].id"
+          :image="topTodaysArticles[0].image"
+          :category="topTodaysArticles[0].category"
+          :title="topTodaysArticles[0].title"
+          :subtitle="topTodaysArticles[0].subtitle"
+          :author="topTodaysArticles[0].author"
+          :date="topTodaysArticles[0].date"
+        />  
 
         <div class="right">
-            <small-news :article="articleData"></small-news>
-            <small-news :article="articleData"></small-news>
-            <small-news :article="articleData"></small-news>
+            <small-news
+              :id="topTodaysArticles[1].id"
+              :image="topTodaysArticles[1].image"
+              :category="topTodaysArticles[1].category"
+              :title="topTodaysArticles[1].title"
+              :subtitle="topTodaysArticles[1].subtitle"
+              :author="topTodaysArticles[1].author"
+              :date="topTodaysArticles[1].date"
+            />
+            <small-news
+              :id="topTodaysArticles[2].id"
+              :image="topTodaysArticles[2].image"
+              :category="topTodaysArticles[2].category"
+              :title="topTodaysArticles[2].title"
+              :subtitle="topTodaysArticles[2].subtitle"
+              :author="topTodaysArticles[2].author"
+              :date="topTodaysArticles[2].date"
+            />
+            <small-news
+              :id="topTodaysArticles[3].id"
+              :image="topTodaysArticles[3].image"
+              :category="topTodaysArticles[3].category"
+              :title="topTodaysArticles[3].title"
+              :subtitle="topTodaysArticles[3].subtitle"
+              :author="topTodaysArticles[3].author"
+              :date="topTodaysArticles[3].date"
+            />
         </div>
     </div>
 
@@ -25,6 +57,7 @@
 <script>
 import BigNews from "./BigNews.vue";
 import SmallNews from "./SmallNews.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: 'TrendingArticles',
@@ -33,19 +66,23 @@ export default {
     SmallNews
     
   },
-  data() {
+  data () {
     return {
-      articleData: {
-        imageUrl: '"~vue-buttons/vue/src/components/pages/Pulse/components/resource/logo.jpg"',
-        title: 'Название вашей статьи',
-        subtitle: 'Краткое описание статьи',
-        category: 'Новости',
-        author: 'Иван Иванов',
-        publishDate: '2024-04-05'
-      }
+      currentSlide: 0,
+      inputData: ""
+    };
+  },
+  computed: {
+    ...mapGetters("pulse", [
+      "getTodaysTrendingArticles"
+    ]),
+    todaysTrendingArticles () {
+      return this.getTodaysTrendingArticles;
+    },
+    topTodaysArticles () {
+      return this.todaysTrendingArticles.slice(0, 4);
     }
   }
-  // any script or data properties you need can go here
 }
 </script>
 
@@ -59,12 +96,14 @@ export default {
 }
 
 .trending-heading {
-  font-size: 36px;
-  width: 50%;
+  color: black;
+  font-size: 32px;
+  font-family: "Calibri", sans-serif;
 }
 
 .trending-articles-right {
   margin-left: auto;
+  font-family: "Calibri", sans-serif;
 }
 
 p {

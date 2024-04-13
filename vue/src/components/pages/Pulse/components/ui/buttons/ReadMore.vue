@@ -2,7 +2,7 @@
   <div>
     <button class="buttons" @click="() => click()">
       <slot>
-        Read more 🡥
+        Read arcticles 🡥
       </slot>
     </button>
   </div>
