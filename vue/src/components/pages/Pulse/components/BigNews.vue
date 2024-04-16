@@ -1,17 +1,17 @@
 <template>
   <div class="big-card">
     <img 
-      :src="image"
+      :src="currentNews['image']"
       alt="card image"
       class="big-card__image"
     >
     <div class="big-card__content">
-      <span class="big-card__content__category">{{ category }}</span>
-      <h2 class="big-card__content__title">{{ title }}</h2>
-      <p class="big-card__content__subtitle">{{ subtitle }}</p>
+      <span class="big-card__content__category">{{ currentNews['category'] }}</span>
+      <h2 class="big-card__content__title">{{ currentNews['title'] }}</h2>
+      <p class="big-card__content__subtitle">{{ currentNews['subtitle'] }}</p>
       <div class="big-card__metadata">
-        <span class="big-card__metadata__author">{{ author }}</span>
-        <span class="big-card__metadata__date">{{ date }}</span>
+        <span class="big-card__metadata__author">{{ currentNews['author'] }}</span>
+        <span class="big-card__metadata__date">{{ currentNews['date'] }}</span>
       </div>
     </div>
   </div>
@@ -22,33 +22,9 @@ import { RouteNames } from "../../../../router/routes";
 export default {
   name: "BigNews",
   props: {
-    id: {
-      type: Number,
-      require: 'true'
-    },
-    image: {
-      type: String,
-      default: 'image'
-    },
-    category: {
-      type: String,
-      default: ''
-    },
-    title: {
-      type: String,
-      default: ''
-    },
-    subtitle: {
-      type: String,
-      default: ''
-    },
-    author: {
-      type: String,
-      default: ''
-    },
-    date: {
-      type: String,
-      default: ''
+    currentNews: {
+      type: Object,
+      required: true
     }
   },
   computed: {

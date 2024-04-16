@@ -10,44 +10,12 @@
     <hr>
 
     <div class="news">
-        <big-news
-          :id="topTodaysArticles[0].id"
-          :image="topTodaysArticles[0].image"
-          :category="topTodaysArticles[0].category"
-          :title="topTodaysArticles[0].title"
-          :subtitle="topTodaysArticles[0].subtitle"
-          :author="topTodaysArticles[0].author"
-          :date="topTodaysArticles[0].date"
-        />  
+        <big-news :current-news="topTodaysArticles[0]"/>  
 
         <div class="right">
-            <small-news
-              :id="topTodaysArticles[1].id"
-              :image="topTodaysArticles[1].image"
-              :category="topTodaysArticles[1].category"
-              :title="topTodaysArticles[1].title"
-              :subtitle="topTodaysArticles[1].subtitle"
-              :author="topTodaysArticles[1].author"
-              :date="topTodaysArticles[1].date"
-            />
-            <small-news
-              :id="topTodaysArticles[2].id"
-              :image="topTodaysArticles[2].image"
-              :category="topTodaysArticles[2].category"
-              :title="topTodaysArticles[2].title"
-              :subtitle="topTodaysArticles[2].subtitle"
-              :author="topTodaysArticles[2].author"
-              :date="topTodaysArticles[2].date"
-            />
-            <small-news
-              :id="topTodaysArticles[3].id"
-              :image="topTodaysArticles[3].image"
-              :category="topTodaysArticles[3].category"
-              :title="topTodaysArticles[3].title"
-              :subtitle="topTodaysArticles[3].subtitle"
-              :author="topTodaysArticles[3].author"
-              :date="topTodaysArticles[3].date"
-            />
+            <small-news :current-news="topTodaysArticles[1]"/>
+            <small-news :current-news="topTodaysArticles[2]"/>
+            <small-news :current-news="topTodaysArticles[3]"/>
         </div>
     </div>
 

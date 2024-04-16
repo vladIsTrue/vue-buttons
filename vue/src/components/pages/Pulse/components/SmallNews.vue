@@ -1,16 +1,16 @@
 <template>
   <div class="small-card">
     <img 
-      :src="image"
+      :src="currentNews['image']"
       alt="card image"
       class="small-card__image"
     >
     <div class="small-card__content">
-      <span class="small-card__content__category">{{ category }}</span>
-      <h2 class="small-card__content__title">{{ title }}</h2>
+      <span class="small-card__content__category">{{ currentNews['category'] }}</span>
+      <h2 class="small-card__content__title">{{ currentNews['title'] }}</h2>
       <div class="small-card__metadata">
-        <span class="small-card__metadata__author">{{ author }}</span>
-        <span class="small-card__metadata__date">{{ date }}</span>
+        <span class="small-card__metadata__author">{{ currentNews['author'] }}</span>
+        <span class="small-card__metadata__date">{{ currentNews['date'] }}</span>
       </div>
     </div>
   </div>
@@ -21,29 +21,9 @@ import { RouteNames } from "../../../../router/routes";
 export default {
   name: "SmallNews",
   props: {
-    id: {
-      type: Number,
-      require: 'true'
-    },
-    image: {
-      type: String,
-      default: 'image'
-    },
-    category: {
-      type: String,
-      default: ''
-    },
-    title: {
-      type: String,
-      default: ''
-    },
-    author: {
-      type: String,
-      default: ''
-    },
-    date: {
-      type: String,
-      default: ''
+    currentNews: {
+      type: Object,
+      required: true
     }
   },
   computed: {

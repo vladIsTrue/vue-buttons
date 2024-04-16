@@ -39,7 +39,7 @@ import { mapGetters, mapActions } from 'vuex';
 import PulseHeader from "@/components/pages/Pulse/components/PulseHeader.vue";
 import PulseFooter from "@/components/pages/Pulse/components/PulseFooter.vue";
 export default {
-  name: 'AddNews.vue',
+  name: 'AddNews',
   components: {
     PulseHeader,
     PulseFooter,
