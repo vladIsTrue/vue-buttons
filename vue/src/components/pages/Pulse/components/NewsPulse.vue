@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 .news-block {
   background-color: white;
   padding: 20px; 

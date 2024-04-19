@@ -3,13 +3,10 @@
     <div class="text-card__content">
       <h2 class="text-card__content__title">{{ title }}</h2>
       <p class="text-card__content__text">{{ subtitle }}</p>
-
     </div>
-
     <RouterLink :to="{ name: routeNames.NEWS_PULSE, params: { id:id } }">
       <ReadMore class="text-card__more"/>
     </RouterLink>
-
   </div>
 </template>
 
