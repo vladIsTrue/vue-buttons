@@ -10,37 +10,37 @@
     </div>
     <nav class="header__nav-links">
       <RouterLink
-        to="/pulse"
+        to="/pulse/articles"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/pulse' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse/articles' }"
       >
         Articles
       </RouterLink>
       <RouterLink
-        to="/product"
+        to="/pulse/product"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/product' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse/product' }"
       >
         Product
       </RouterLink>
       <RouterLink
-        to="/solutions"
+        to="/pulse/solutions"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/solutions' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse/solutions' }"
       >
         Solutions
       </RouterLink>
       <RouterLink
-        to="/resources"
+        to="/pulse/resources"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/resources' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse/resources' }"
       >
         Resources
       </RouterLink>
       <RouterLink
-        to="/enterprise"
+        to="/pulse/enterprise"
         class="header__nav-link"
-        :class="{ 'header__nav-link--active': $route.path === '/enterprise' }"
+        :class="{ 'header__nav-link--active': $route.path === '/pulse/enterprise' }"
       >
         Enterprise
       </RouterLink>

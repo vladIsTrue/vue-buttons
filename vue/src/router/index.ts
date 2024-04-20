@@ -15,17 +15,17 @@ const routes = [
     component: HomePage
   },
   {
-    path: '/pulse',
+    path: '/pulse/articles',
     name: RouteNames.PULSE,
     component: PulsePage
   },
   {
-    path: '/news_pulse',
+    path: '/pulse/news',
     name: RouteNames.NEWS_PULSE,
     component: NewsPulse
   },
   {
-    path: '/add_news/:id',
+    path: '/pulse/add/:id',
     name: RouteNames.ADD_NEWS_PULSE,
     component: AddNews
   }

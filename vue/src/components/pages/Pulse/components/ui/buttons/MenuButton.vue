@@ -1,5 +1,5 @@
 <template>
-  <button class="menu-btn" @click="() => click()">
+  <button @click="() => click()" class="menu-btn">
     <slot />
   </button>
 </template>
@@ -30,9 +30,9 @@ export default {
 
   background-color: white;
   border: none;
-}
 
-.menu-btn:active {
-  color: #000;
+  &:active {
+    color: #000;
+  }
 }
 </style>

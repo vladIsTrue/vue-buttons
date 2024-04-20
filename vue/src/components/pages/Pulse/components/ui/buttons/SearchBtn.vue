@@ -1,7 +1,15 @@
 <template>
-  <div class="search-btn">
-    <input type="text" placeholder="Search" v-model="inputData">
-    <button @click="() => sendData()"></button>
+  <div class="search">
+    <input 
+      v-model="inputData"
+      type="text"
+      placeholder="Search"
+      class="search-input"
+    >
+    <button 
+      @click="() => sendData()"
+      class="search-btn"
+    />
   </div>
 </template>
 
@@ -22,7 +30,7 @@ export default {
 </script>
 
 <style lang="less">
-.search-btn {
+.search {
   position: relative;
   border: 1px solid black;
   border-radius: 50px;
@@ -30,7 +38,7 @@ export default {
   align-items: center; 
   justify-content: space-between;
   
-  input[type="text"] {
+  &-input[type="text"] {
     border: none;
     padding: 10px 20px;
     width: 400;
@@ -43,7 +51,7 @@ export default {
       outline: none;
     }
   }
-  button {
+  &-btn {
     border: none;
     border-radius: 50%;
 
