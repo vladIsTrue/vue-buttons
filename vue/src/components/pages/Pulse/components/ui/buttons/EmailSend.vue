@@ -6,7 +6,7 @@
       placeholder="Enter your email address here"
       class="custom-email-input">
     <button 
-      @click="sendEmail"  
+      @click="() => sendEmail()"  
       class="custom-email-btn"
     />
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="buttons" @click="() => click()">
+    <button class="read-more-button" @click="() => click()">
       <slot>
         Read arcticles 🡥
       </slot>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.buttons {
+.read-more-button {
   background-color: transparent;
   border: none;
   font-family: Calibri;

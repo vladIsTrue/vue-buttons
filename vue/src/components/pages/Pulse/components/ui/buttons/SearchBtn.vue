@@ -7,8 +7,8 @@
       class="search-input"
     >
     <button 
-      @click="() => sendData()"
       class="search-btn"
+      @click="() => sendData()"
     />
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
   align-items: center; 
   justify-content: space-between;
   
-  &-input[type="text"] {
+  &-input {
     border: none;
     padding: 10px 20px;
     width: 400;
