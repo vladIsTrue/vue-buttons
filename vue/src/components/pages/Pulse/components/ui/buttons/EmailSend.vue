@@ -1,19 +1,21 @@
 <template>
   <div class="custom-email">
     <input 
+      class="custom-email-input"
       v-model="email"
       type="email"
       placeholder="Enter your email address here"
-      class="custom-email-input">
+    >
     <button 
-      @click="() => sendEmail()"  
       class="custom-email-btn"
+      @click="() => sendEmail()"
     />
   </div>
 </template>
 
 <script>
-export default {  
+export default {
+  name: 'EmailSend',
   data() {
     return {
       email: ''

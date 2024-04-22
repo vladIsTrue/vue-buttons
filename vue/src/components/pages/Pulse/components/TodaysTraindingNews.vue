@@ -9,11 +9,11 @@
     </div>
     <hr>
     <div class="news">
-      <big-news :current-news="topTodaysArticles[0]"/>  
+      <BigNews :current-news="topTodaysArticles[0]"/>  
       <div class="right">
-        <small-news :current-news="topTodaysArticles[1]"/>
-        <small-news :current-news="topTodaysArticles[2]"/>
-        <small-news :current-news="topTodaysArticles[3]"/>
+        <template v-for="(article, index) in topTodaysArticles.slice(1, 4)">
+          <SmallNews :key="index" :current-news="article"/>
+        </template>
       </div>
     </div>
   </div>
@@ -29,7 +29,6 @@ export default {
   components: {
     BigNews,
     SmallNews
-    
   },
   data () {
     return {
@@ -53,8 +52,6 @@ export default {
 
 <style lang="less" scoped>
 .trending {
-  padding: 1rem 2rem;
-
   &__articles {
     display: flex;
 
@@ -75,11 +72,11 @@ export default {
   }
 
   .news {
-    padding-right: 1rem;
+    padding-right: 4px;
     display: flex;
 
     &__right {
-      padding-left: 1rem;
+      padding-left: 4px;
       width: 50%;
     }
   }

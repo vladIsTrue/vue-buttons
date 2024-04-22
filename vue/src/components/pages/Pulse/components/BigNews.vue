@@ -54,7 +54,7 @@ export default {
   }
 
   &__content {
-    padding: 1rem;
+    padding: 10px;
     background-color: #2c3e50;
     color: white;
 

@@ -108,7 +108,7 @@ export default {
     display: flex;
   }
   &__nav-btn {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     border: none;
     border-radius: 20px;
     font-size: 12px;

@@ -13,10 +13,13 @@
 <script>
 import { RouteNames } from "@/router/routes";
 import ReadMore from "./ui/buttons/ReadMore.vue";
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   name: "TextNews",
+  components: {
+    ReadMore
+  },
   props: {
     id: {
       type: Number,
@@ -35,17 +38,11 @@ export default {
     ...mapGetters('ReadMore', [
       'getButtonValues'
     ]),
-    ...mapGetters('newsStoreTatarskayaFedotova', [
-      'getFirstTypeNews'
-    ]),
     routeNames () {
       return RouteNames;
     }
   },
   methods: {
-    ...mapActions('buttonTatarskayaFedotova', [
-      'incrementButtonValue'
-    ]),
     changeSlide (index) {
       this.currentSlide = index;
       this.$emit('changeSlideIndex', index);
@@ -53,9 +50,6 @@ export default {
     incrementCount (index) {
       this.incrementButtonValue(index);
     }
-  },
-  components: {
-    ReadMore
   }
 };
 </script>
@@ -69,7 +63,7 @@ export default {
   border: 14px solid  #a97ddf;
   border-radius: 10px;
   
-  padding: 1em;
+  padding: 15px;
 
   background-color: white;
   

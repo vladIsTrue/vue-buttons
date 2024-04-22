@@ -1,5 +1,5 @@
 <template>
-  <button @click="() => click()" class="menu-btn">
+  <button class="menu-btn" @click="() => click()">
     <slot />
   </button>
 </template>
