@@ -13,7 +13,6 @@
 <script>
 import { RouteNames } from "@/router/routes";
 import ReadMore from "./ui/buttons/ReadMore.vue";
-import { mapGetters } from 'vuex';
 
 export default {
   name: "TextNews",
@@ -35,9 +34,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('ReadMore', [
-      'getButtonValues'
-    ]),
     routeNames () {
       return RouteNames;
     }

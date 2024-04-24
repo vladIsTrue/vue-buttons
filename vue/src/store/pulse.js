@@ -71,6 +71,7 @@ export default {
     ]
   },
   getters: {
+    getNews: state => index =>state.enteraintmentArticles[index],
     getTodaysTrendingArticles: state => state.todaysTrendingArticles,
     getFilteredNews: state => searchKeyword => state.enteraintmentArticles.filter(news => news.title.toLowerCase().includes(searchKeyword.toLowerCase()))
   },
