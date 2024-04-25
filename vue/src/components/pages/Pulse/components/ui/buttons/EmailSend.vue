@@ -2,9 +2,9 @@
   <div class="custom-email">
     <input 
       v-model="email"
-      class="custom-email-input"
       type="email"
       placeholder="Enter your email address here"
+      class="custom-email-input"
     >
     <button 
       class="custom-email-btn"
