@@ -1,8 +1,8 @@
 <template>
   <div class="custom-email">
     <input 
-      class="custom-email-input"
       v-model="email"
+      class="custom-email-input"
       type="email"
       placeholder="Enter your email address here"
     >

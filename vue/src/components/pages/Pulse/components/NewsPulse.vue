@@ -2,13 +2,13 @@
   <PageLayout>
     <div class="news-block">
       <PulseHeader/>
-      <h2 class="news-block__title">{{getNews(this.$route.params.id).title}}</h2>
+      <h2 class="news-block__title">{{newsTitle}}</h2>
       <img 
-        :src="getNews(this.$route.params.id).image" 
+        :src="newsImage" 
         alt="Card Image" 
         class="news-block__image"
       />
-      <p class="news-block__subtitle"> {{getNews(this.$route.params.id).subtitle}}</p>
+      <p class="news-block__subtitle"> {{newsSubtitle}}</p>
       <PulseFooter/>
     </div>
   </PageLayout>
@@ -29,7 +29,16 @@ export default {
   computed: {
     ...mapGetters("pulse", [
       "getNews"
-    ])
+    ]),
+    newsTitle() {
+      return this.getNews(this.$route.params.id).title;
+    },
+    newsSubtitle() {
+      return this.getNews(this.$route.params.id).subtitle;
+    },
+    newsImage() {
+      return this.getNews(this.$route.params.id).image;
+    }
   }
 }
 </script>

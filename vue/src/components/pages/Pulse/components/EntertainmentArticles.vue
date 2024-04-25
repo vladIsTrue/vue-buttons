@@ -8,7 +8,7 @@
         <button class="right-button" @click="() => next()">&#10095;</button>
       </div>
     </div>
-    <hr>
+    <hr class="entertainment-line">
     <div class="news" :style="rowStyles">
       <TextNews
         v-for="news in filteredNews"
@@ -104,7 +104,7 @@ export default {
     }
   }
 
-  & hr {
+  &-line {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
