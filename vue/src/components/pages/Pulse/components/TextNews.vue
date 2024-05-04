@@ -37,15 +37,6 @@ export default {
     routeNames () {
       return RouteNames;
     }
-  },
-  methods: {
-    changeSlide (index) {
-      this.currentSlide = index;
-      this.$emit('changeSlideIndex', index);
-    },
-    incrementCount (index) {
-      this.incrementButtonValue(index);
-    }
   }
 };
 </script>

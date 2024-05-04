@@ -72,7 +72,6 @@ export default {
 
 <style lang="less" scoped>
 .entertainment {
-  padding: 1rem 2rem;
   overflow: hidden;
 
   &-articles {

@@ -20,12 +20,12 @@ const routes = [
     component: PulsePage
   },
   {
-    path: '/pulse/news',
+    path: '/pulse/news/:id',
     name: RouteNames.NEWS_PULSE,
     component: NewsPulse
   },
   {
-    path: '/pulse/add/:id',
+    path: '/pulse/add/',
     name: RouteNames.ADD_NEWS_PULSE,
     component: AddNews
   }

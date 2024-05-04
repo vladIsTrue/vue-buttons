@@ -73,7 +73,8 @@ export default {
   getters: {
     getNews: state => index =>state.enteraintmentArticles[index],
     getTodaysTrendingArticles: state => state.todaysTrendingArticles,
-    getFilteredNews: state => searchKeyword => state.enteraintmentArticles.filter(news => news.title.toLowerCase().includes(searchKeyword.toLowerCase()))
+    getFilteredNews: state => searchKeyword => state.enteraintmentArticles.filter(news => news.title.toLowerCase().includes(searchKeyword.toLowerCase())),
+    getLastIndex: state => state.enteraintmentArticles.length
   },
   mutations: {
     addNews (state, news) {
