@@ -1,10 +1,10 @@
 <template>
   <div class="text-card">
     <div class="text-card__content">
-      <h2 class="text-card__content__title">{{ title }}</h2>
-      <p class="text-card__content__text">{{ subtitle }}</p>
+      <h2 class="text-card__content__title">{{ card.title }}</h2>
+      <p class="text-card__content__text">{{ card.subtitle }}</p>
     </div>
-    <RouterLink :to="{ name: routeNames.NEWS_PULSE, params: { id:id } }">
+    <RouterLink :to="{ name: routeNames.NEWS_PULSE, params: { id:card.id } }">
       <ReadMore class="text-card__more"/>
     </RouterLink>
   </div>
@@ -20,17 +20,9 @@ export default {
     ReadMore
   },
   props: {
-    id: {
-      type: Number,
-      require: 'true'
-    },
-    title: {
-      type: String,
-      default: ''
-    },
-    subtitle: {
-      type: String,
-      default: ''
+    card: {
+      type: Object,
+      required: true
     }
   },
   computed: {

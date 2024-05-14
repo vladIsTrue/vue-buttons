@@ -11,11 +11,9 @@
     <hr class="entertainment-line">
     <div class="news" :style="rowStyles">
       <TextNews
-        v-for="news in filteredNews"
+        v-for="news in entertainmentArticles"
           :key="news.id"
-          :id="news.id"
-          :title="news.title"
-          :subtitle="news.subtitle"
+          :card="news"
         />
     </div>
   </div>
@@ -24,7 +22,7 @@
 <script>
 import TextNews from "./TextNews.vue";
 import SearchBtn from "./ui/buttons/SearchBtn.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
   
 export default {
   name: 'EntertainmentArticles',
@@ -41,10 +39,11 @@ export default {
   },
   computed: {
     ...mapGetters("pulse", [
-      "getFilteredNews",
+      "getEntertainmentArticles",
+      //"getTodaysTrendingArticles"
     ]),
-    filteredNews() {
-      return this.getFilteredNews(this.inputData);
+    entertainmentArticles() {
+      return this.getEntertainmentArticles;
     },
     rowStyles() {
       return {
@@ -54,7 +53,7 @@ export default {
   },
   methods: {
     next() {
-      if (this.currentIndex < this.filteredNews.length) {
+      if (this.currentIndex < this.entertainmentArticles.length) {
         this.currentIndex += 1;
       }
     },
@@ -65,7 +64,14 @@ export default {
     },
     handleSearch (data) {
       this.inputData = data;
-    }
+      this.loadEntertainmentArticlesList(this.inputData);
+    },
+    ...mapActions('pulse', [
+      'loadEntertainmentArticlesList'
+    ]),
+  },
+  created () {
+    this.loadEntertainmentArticlesList(this.inputData);
   }
 }
 </script>

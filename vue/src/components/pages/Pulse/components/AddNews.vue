@@ -35,7 +35,7 @@
 
 <script>
 import PageLayout from '../../../parts/PageLayout';
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import PulseHeader from "@/components/pages/Pulse/components/PulseHeader.vue";
 import PulseFooter from "@/components/pages/Pulse/components/PulseFooter.vue";
 export default {
@@ -53,18 +53,12 @@ export default {
       subtitle: ''
     };
   },
-  computed: {
-    ...mapGetters("pulse", [
-      "getLastIndex"
-    ])
-  },
   methods: {
     ...mapActions('pulse', [
       'addNews'
     ]),
     createNews () {
       const newNews = {
-        id: this.getLastIndex,
         date: this.date,
         title: this.title,
         image: this.image,

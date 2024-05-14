@@ -18,7 +18,7 @@
 import PageLayout from '../../../parts/PageLayout';
 import PulseHeader from "@/components/pages/Pulse/components/PulseHeader.vue";
 import PulseFooter from "@/components/pages/Pulse/components/PulseFooter.vue";
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 export default {
   name: 'NewsPulse',
   components: {
@@ -28,17 +28,25 @@ export default {
   },
   computed: {
     ...mapGetters("pulse", [
-      "getNews"
+      "getEntertainmentArticles"
     ]),
     newsTitle() {
-      return this.getNews(this.$route.params.id).title;
+      return this.getEntertainmentArticles.title;
     },
     newsSubtitle() {
-      return this.getNews(this.$route.params.id).subtitle;
+      return this.getEntertainmentArticles.subtitle;
     },
     newsImage() {
-      return this.getNews(this.$route.params.id).image;
+      return this.getEntertainmentArticles.image;
     }
+  },
+  methods: {
+    ...mapActions('pulse', [
+      'loadDataById'
+    ])
+  },
+  created () {
+    this.loadDataById(this.$route.params.id);
   }
 }
 </script>

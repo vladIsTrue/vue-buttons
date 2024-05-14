@@ -22,7 +22,7 @@
 <script>
 import BigNews from "./BigNews.vue";
 import SmallNews from "./SmallNews.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions} from "vuex";
 
 export default {
   name: 'TrendingArticles',
@@ -46,6 +46,14 @@ export default {
     topTodaysArticles () {
       return this.todaysTrendingArticles.slice(0, 4);
     }
+  },
+  methods: {
+    ...mapActions('pulse', [
+      'loadTodaysTrendingArticlesList'
+    ])
+  },
+  created () {
+    this.loadTodaysTrendingArticlesList();
   }
 }
 </script>
