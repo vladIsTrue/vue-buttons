@@ -68,7 +68,7 @@ export default {
     },
     ...mapActions('pulse', [
       'loadEntertainmentArticlesList'
-    ]),
+    ])
   },
   created () {
     this.loadEntertainmentArticlesList(this.inputData);
